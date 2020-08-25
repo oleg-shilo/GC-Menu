@@ -39,7 +39,7 @@ namespace GlobalContextMenu
                     cm.Items.Add(item.title, null, (sender1, e1) => SendInput(item.text.Replace("\\n", Environment.NewLine)));
 
             cm.Items.Add(new ToolStripSeparator());
-            cm.Items.Add("Organize items", null, (s, e) => Config.Edit());
+            cm.Items.Add("Organize items", null, (s, e) => Config.EditItems());
 
             cm.Closed += (s, e) => Close();
             cm.ShowAndCenterOnActiveScreen();
@@ -50,8 +50,23 @@ namespace GlobalContextMenu
         void SendInput(string text)
         {
             SetForegroundWindow(parent);
-            Thread.Sleep(500);
-            SendKeys.SendWait(text);
+            SendKeys.Flush();
+            Thread.Sleep(10);
+            text.ToList().ForEach(x =>
+            {
+                try
+                {
+                    Thread.Sleep(10);
+                    if ("+^%~{}".Contains(x))
+                        SendKeys.SendWait("{" + x + "}");
+                    else
+                        SendKeys.SendWait(x.ToString());
+                    SendKeys.Flush();
+                }
+                catch { }
+            });
+
+            // SendKeys.SendWait(text); // works more reliable when sent one by one
             Close();
         }
 
