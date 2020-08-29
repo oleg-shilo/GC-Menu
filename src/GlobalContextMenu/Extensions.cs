@@ -23,6 +23,6 @@ namespace GlobalContextMenu
 
         public static string DataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GlobalContextMenu");
         public static string ConfigFile = Path.Combine(Global.DataDir, "config.txt");
-        public static string HotKeyFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "hotkey.txt");
+        public static string HotKeyFile = Path.Combine(Global.DataDir, "hotkey.txt");
     }
 }

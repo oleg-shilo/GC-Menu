@@ -7,7 +7,7 @@
     <ProjectGuid>{A1D47DCD-0A8C-4738-AEEF-3A1AE8862144}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GlobalContextMenu</RootNamespace>
-    <AssemblyName>GlobalContextMenu</AssemblyName>
+    <AssemblyName>gc-menu</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -77,6 +77,11 @@
     <Compile Include="HotKeys.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -91,9 +96,19 @@
     <EmbeddedResource Include="DispatcherForm.resx">
       <DependentUpon>DispatcherForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="tray_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>md "$(ProjectDir)out"
+copy "$(TargetPath)" "$(ProjectDir)out\$(TargetName).exe"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

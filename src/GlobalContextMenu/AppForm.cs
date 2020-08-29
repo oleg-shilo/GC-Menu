@@ -23,6 +23,7 @@ namespace GlobalContextMenu
 
         void AppForm_Load(object sender, EventArgs e)
         {
+            notifyIcon1.Icon = Properties.resources.tray_icon;
             Task.Run(() => this.Invoke((Action)this.Hide));
         }
 
