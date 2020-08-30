@@ -22,10 +22,10 @@ menu is popped up.
 
 You can configure hotkey via the settings panel.
 
-![](docs/settings.gif)
+![](docs/settings.png)
 
 You can display it by double-clicking the application tray icon.
 
-![](docs/notify_icon.gif)
+![](docs/notify_icon.png)
      
  
