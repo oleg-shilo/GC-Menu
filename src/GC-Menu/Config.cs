@@ -91,7 +91,9 @@ namespace GlobalContextMenu
 
         static string ConfigHeader =
 @";  <display text>|<insertion text>
-;  use '\n' to indicate the line breaks
+;  use '\n' to indicate line breaks
+;  use '---' to indicate a menu item separator
+;  use '  ' (double-space) to indicate a nested menu item
 ;  Example: Hello...|Hello World!
 ;---------------------------------------";
 
@@ -101,6 +103,10 @@ namespace GlobalContextMenu
             File.WriteAllText(configFile, ConfigHeader +
 @"
 Hello...|Hello World!
+---
+Emails
+  John|john.connor@gmail.com
+  Sara|sara.connor@gmail.com
 ;---------------------------------------");
         }
 
