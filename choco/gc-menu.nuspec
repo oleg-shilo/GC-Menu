@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>GC-Menu</id>
+        <version>1.0.0.0</version>
+        <title>GC-Menu</title>
+        <authors>Oleg Shilo</authors>
+        <owners>Oleg Shilo</owners>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/oleg-shilo/GC-Menu</projectUrl>
+        <packageSourceUrl>https://github.com/oleg-shilo/GC-Menu</packageSourceUrl>
+        <bugTrackerUrl>https://github.com/oleg-shilo/GC-Menu/issues</bugTrackerUrl>
+        <docsUrl>https://github.com/oleg-shilo/GC-Menu</docsUrl>
+        <iconUrl>https://github.com/oleg-shilo/GC-Menu/raw/master/src/GC-Menu/tray_icon.ico</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>GC-Menu is a typing assistance utility that allows you to have you frequently typed text fragments (e.g. email, address) available for automatic typing in the input fields of any application of you choice.
+</description>
+        <summary>GC-Menu</summary>
+        <releaseNotes>
+# Release v1.0.0.0
+- Initial Choco release
+        </releaseNotes>
+        <copyright>Oleg Shilo</copyright>
+        <tags>typing input C# UI UX User-Experience</tags>
+        <dependencies>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="tools\chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />
+        <file src="tools\chocolateyUninstall.ps1" target="tools\chocolateyUninstall.ps1" />
+    </files>
+</package>
