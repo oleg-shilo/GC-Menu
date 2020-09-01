@@ -3,7 +3,6 @@ $url = 'https://github.com/oleg-shilo/GC-Menu/releases/download/v1.0.0/gc-menu.7
 
 try {
   [System.Environment]::SetEnvironmentVariable('UNDER_CHOCO', 'yes')
-  Stop-Process -Name "gc-menu"
 
   $installDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
