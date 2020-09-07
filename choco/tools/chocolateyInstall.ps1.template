@@ -1,18 +1,12 @@
 ﻿$packageName = 'GC-Menu'
 $url = ???
 
-try {
-  [System.Environment]::SetEnvironmentVariable('UNDER_CHOCO', 'yes')
-  Stop-Process -Name "gc-menu"
+Stop-Process -Name "gc-menu"
 
-  $installDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$installDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-  $checksum = ???
-  $checksumType = "sha256"
+$checksum = ???
+$checksumType = "sha256"
 
-  # Download and unpack a zip file
-  Install-ChocolateyZipPackage "$packageName" "$url" "$installDir" -checksum $checksum -checksumType $checksumType
-
-} catch {
-  throw $_.Exception
-}
+# Download and unpack a zip file
+Install-ChocolateyZipPackage "$packageName" "$url" "$installDir" -checksum $checksum -checksumType $checksumType

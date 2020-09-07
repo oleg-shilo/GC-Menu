@@ -1,6 +1,6 @@
 $packageName = 'GC-Menu'
 
-$FileName = [IO.Path]::Combine([Environment]::GetFolderPath('Startup'), 'C:\Path\GlobalContextMenu.lnk')
+$FileName = [IO.Path]::Combine([Environment]::GetFolderPath('Startup'), 'GlobalContextMenu.lnk')
 if (Test-Path $FileName) {
   Remove-Item $FileName
 }
