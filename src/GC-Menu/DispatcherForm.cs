@@ -70,10 +70,11 @@ namespace GlobalContextMenu
 
             var widestMenuItem = cm.Items.OfType<ToolStripItem>().Select(x => x.Text).OrderByDescending(x => x.Length).FirstOrDefault() ?? "";
 
-            var menuWidth = this.CreateGraphics().MeasureString(widestMenuItem, this.Font);
+            // var menuWidth = this.CreateGraphics().MeasureString(widestMenuItem, this.Font);
+            var menuWidth = cm.Width + (cm.Padding.Horizontal * 2);
 
             cm.Closed += (s, e) => Close();
-            cm.ShowAndCenterOnActiveScreen((int)menuWidth.Width);
+            cm.ShowAndCenterOnActiveScreen(menuWidth);
 
             cm.Focus();
         }
