@@ -8,10 +8,15 @@ namespace GlobalContextMenu
 {
     static class Extensions
     {
-        public static void ShowAndCenterOnActiveScreen(this ToolStripDropDown control)
+        public static void ShowAndCenterOnActiveScreen(this ToolStripDropDown control, int menuWidth)
         {
             var screen = Screen.FromPoint(Cursor.Position);
+
             var left = screen.Bounds.X + screen.Bounds.Width / 2 - control.Width / 2;
+
+            if (Cursor.Position.X > left && Cursor.Position.X < (left + menuWidth)) // cursor is over menu so move menu otherwise cursor will pre-select the item under itself
+                left = Cursor.Position.X + 10;
+
             var top = screen.Bounds.Y + screen.Bounds.Height / 2 - control.Height / 2;
             control.Show(new Point(left, top));
         }

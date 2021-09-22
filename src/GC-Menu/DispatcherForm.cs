@@ -68,8 +68,12 @@ namespace GlobalContextMenu
             cm.Items.Add(new ToolStripSeparator());
             cm.Items.Add("Organize items", null, (s, e) => Config.EditItems());
 
+            var widestMenuItem = cm.Items.OfType<ToolStripItem>().Select(x => x.Text).OrderByDescending(x => x.Length).FirstOrDefault() ?? "";
+
+            var menuWidth = this.CreateGraphics().MeasureString(widestMenuItem, this.Font);
+
             cm.Closed += (s, e) => Close();
-            cm.ShowAndCenterOnActiveScreen();
+            cm.ShowAndCenterOnActiveScreen((int)menuWidth.Width);
 
             cm.Focus();
         }

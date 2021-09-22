@@ -5,30 +5,30 @@ using System.IO;
 using System.Net;
 using System;
 
-void main()
-{
+// void main()
+// {
     ServicePointManager.Expect100Continue = true;
     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-    var url = "https://github.com/oleg-shilo/GC-Menu/releases/download/v1.0.0/gc-menu.7z";
+    var url = "https://github.com/oleg-shilo/GC-Menu/releases/download/v1.0.1.0/gc-menu.7z";
 
-    var installScript = @"tools\chocolateyInstall.ps1";
+var installScript = @"tools\chocolateyInstall.ps1";
 
-    var cheksum = calcChecksum(url);
-    // var cheksum = "E1809AD6433A91B2FF4803E7F4B15AE0FA88905A28949EAC5590F7D9FD9BE9C3";
-    Console.WriteLine(cheksum);
+var cheksum = calcChecksum(url);
+// var cheksum = "E1809AD6433A91B2FF4803E7F4B15AE0FA88905A28949EAC5590F7D9FD9BE9C3";
+Console.WriteLine(cheksum);
 
     var code = File.ReadAllText(installScript + ".template")
                    .Replace("$url = ???", "$url = '" + url + "'")
                    .Replace("$checksum = ???", "$cheksum = '" + cheksum + "'");
 
-    File.WriteAllText(installScript, code);
+File.WriteAllText(installScript, code);
     Console.WriteLine("--------------");
     Console.WriteLine(code);
     Console.WriteLine("--------------");
     Console.WriteLine();
     Console.WriteLine("Done...");
-}
+// }
 
 string calcChecksum(string url)
 {

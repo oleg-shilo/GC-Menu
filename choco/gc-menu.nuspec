@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>GC-Menu</id>
-        <version>1.0.0.0</version>
+        <version>1.0.1.0</version>
         <title>GC-Menu</title>
         <authors>Oleg Shilo</authors>
         <owners>Oleg Shilo</owners>
@@ -18,7 +18,7 @@
         <summary>GC-Menu</summary>
         <releaseNotes>
 # Release v1.0.0.0
-- Initial Choco release
+- Implemented shifting menu so the mouse cursor is not hovering over the menu and pre-selecting the item.
         </releaseNotes>
         <copyright>Oleg Shilo</copyright>
         <tags>typing input C# UI UX User-Experience</tags>
