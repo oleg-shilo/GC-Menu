@@ -1,5 +1,7 @@
 # GC-Menu - Global Context Menu
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://oleg-shilo.github.io/cs-script/Donation.html)
+
 GC-Menu is a very simple application that aims on improving your user experiences when working on Windows. 
 
 Basically GC-Menu is a typing assistance tool that allows you to have you frequently typed text fragments (e.g. email, address) available for automatic typing in the input application of you choice.
