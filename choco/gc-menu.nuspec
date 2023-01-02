@@ -11,7 +11,7 @@
         <packageSourceUrl>https://github.com/oleg-shilo/GC-Menu</packageSourceUrl>
         <bugTrackerUrl>https://github.com/oleg-shilo/GC-Menu/issues</bugTrackerUrl>
         <docsUrl>https://github.com/oleg-shilo/GC-Menu</docsUrl>
-        <iconUrl>https://raw.githubusercontent.com/oleg-shilo/GC-Menu/master/src/GC-Menu/logo.svg</iconUrl>
+        <iconUrl>https://cdn.statically.io/img/raw.githubusercontent.com/oleg-shilo/GC-Menu/master/src/GC-Menu/logo.svg</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>GC-Menu is a typing assistance utility that allows you to have you frequently typed text fragments (e.g. email, address) available for automatic typing in the input fields of any application of you choice.
 </description>
