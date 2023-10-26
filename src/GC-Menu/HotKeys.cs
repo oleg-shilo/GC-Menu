@@ -35,10 +35,12 @@ public class HotKeys
 
     void Init()
     {
+        var topScreeY = Screen.AllScreens.Select(x => x.Bounds.Top).Max();
         wnd = new Window
         {
             Width = 0,
             Height = 0,
+            Top = topScreeY - 500,
             ShowInTaskbar = false,
             WindowStyle = WindowStyle.None
         };
