@@ -130,7 +130,7 @@ namespace GlobalContextMenu
                 try
                 {
                     Thread.Sleep(10);
-                    if ("+^%~{}".Contains(x))
+                    if ("+^%~{}()".Contains(x))
                         SendKeys.SendWait("{" + x + "}");
                     else
                         SendKeys.SendWait(x.ToString());
