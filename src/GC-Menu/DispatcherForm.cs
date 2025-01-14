@@ -81,6 +81,47 @@ namespace GlobalContextMenu
 
         void SendInput(string text)
         {
+            if (text.StartsWith("{clp"))
+            {
+                PasteClipboardInput(text);
+            }
+            else
+            {
+                SendKeybaordInput(text);
+            }
+        }
+
+        void PasteClipboardInput(string text)
+        {
+            Clipboard.Clear();
+            if (text.StartsWith("{clp:html}"))
+            {
+                var html = text.Substring("{clp:html}".Length);
+
+                var dataObject = new DataObject();
+                dataObject.SetData(DataFormats.Html, html.ToHtmlClipboardData());
+                dataObject.SetData(DataFormats.Text, html);
+                dataObject.SetData(DataFormats.UnicodeText, html);
+                Clipboard.SetDataObject(dataObject);
+            }
+            else if (text.StartsWith("{clp}"))
+            {
+                var txt = text.Substring("{clp}".Length);
+                Clipboard.SetText(txt, TextDataFormat.UnicodeText);
+            }
+
+            SetForegroundWindow(parent);
+            SendKeys.Flush();
+            Thread.Sleep(10);
+            SendKeys.SendWait("^v");
+            Thread.Sleep(10);
+
+            SendKeys.Flush();
+            Close();
+        }
+
+        void SendKeybaordInput(string text)
+        {
             SetForegroundWindow(parent);
             SendKeys.Flush();
             Thread.Sleep(10);

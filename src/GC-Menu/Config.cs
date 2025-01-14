@@ -81,17 +81,35 @@ namespace GlobalContextMenu
             }
         }
 
-        public static void EnsureDefaults(string configFile = null)
+        public static void EnsureDefaults(string configFile = null, bool restoreHeader = false)
         {
             configFile = configFile ?? Global.ConfigFile;
 
             if (!File.Exists(configFile))
+            {
                 CreateDefaultConfigFile(configFile);
+            }
+            else if (restoreHeader)
+            {
+                try
+                {
+                    var lines = File.ReadAllLines(configFile);
+                    if (lines.FirstOrDefault()?.StartsWith(";") != true)
+                    {
+                        var headerLines = ConfigHeader.Split('\n', '\r').Where(x => !string.IsNullOrEmpty(x)).ToList();
+                        lines = headerLines.Concat(lines).ToArray();
+                        File.WriteAllLines(configFile, lines);
+                    }
+                }
+                catch { }// failing here is not critical
+            }
         }
 
         static string ConfigHeader =
 @";  <display text>|<insertion text>
 ;  use '\n' to indicate line breaks
+;  use '{clp}' to indicate that the insertion text needs to be pasted from the clipboard instead of simulating typing
+;  use '{clp:html}' to paste as an html clipboard format 
 ;  use '---' to indicate a menu item separator
 ;  use '  ' (double-space) to indicate a nested menu item
 ;  Example: Hello...|Hello World!
@@ -114,6 +132,7 @@ Emails
         {
             try
             {
+                EnsureDefaults(configFile, restoreHeader: true);
                 configFile = configFile ?? Global.ConfigFile;
 
                 var timestamp = File.GetLastWriteTimeUtc(configFile);

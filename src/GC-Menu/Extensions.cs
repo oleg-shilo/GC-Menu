@@ -21,6 +21,27 @@ namespace GlobalContextMenu
             var top = screen.Bounds.Y + screen.Bounds.Height / 2 - control.Height / 2;
             control.Show(new Point(left, top));
         }
+
+        public static string ToHtmlClipboardData(this string htmlFragment)
+        {
+            const string header = "Version:0.9\r\n";
+            string source = "<html><body><!--StartFragment-->" + htmlFragment + "<!--EndFragment--></body></html>";
+
+            int startHtml = header.Length;
+            int startFragment = source.IndexOf("<!--StartFragment-->") + "<!--StartFragment-->".Length;
+            int endFragment = source.IndexOf("<!--EndFragment-->");
+            int endHtml = source.Length;
+
+            return string.Format(
+                "{0}StartHTML:{1:00000000}\r\nEndHTML:{2:00000000}\r\nStartFragment:{3:00000000}\r\nEndFragment:{4:00000000}\r\n{5}",
+                header,
+                startHtml,
+                endHtml,
+                startFragment,
+                endFragment,
+                source
+            );
+        }
     }
 
     internal class Global
