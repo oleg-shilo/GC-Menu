@@ -10,7 +10,7 @@ using System;
 ServicePointManager.Expect100Continue = true;
 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-var url = "https://github.com/oleg-shilo/GC-Menu/releases/download/v1.0.3/gc-menu.7z";
+var url = "https://github.com/oleg-shilo/GC-Menu/releases/download/v1.1.0.0/gc-menu.7z";
 
 var installScript = @"tools\chocolateyInstall.ps1";
 

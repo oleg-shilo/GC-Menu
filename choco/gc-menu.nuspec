@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>GC-Menu</id>
-        <version>1.0.3.0</version>
+        <version>1.1.0.0</version>
         <title>GC-Menu</title>
         <authors>Oleg Shilo</authors>
         <owners>Oleg Shilo</owners>
@@ -17,8 +17,11 @@
 </description>
         <summary>GC-Menu</summary>
         <releaseNotes>
-# Release v1.0.2
-- The invisible HotKeyHook window moved away from the screen boundaries so resize grip is not visible on solid desktop backgrounds.
+# Release v1.1.0.0
+- Added support for clipboard-paste insertion
+- Added support for clipboard HTML content
+- Added restoring config file header if it's absent.
+
         </releaseNotes>
         <copyright>Oleg Shilo</copyright>
         <tags>typing input C# UI UX User-Experience</tags>
