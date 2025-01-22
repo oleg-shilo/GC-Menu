@@ -44,9 +44,14 @@ namespace GlobalContextMenu
             }
         }
 
+        void convertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Task.Run(DispatcherForm.ConvertHrtmlToTextClipboard);
+        }
+
         void configToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Config.EditItems();
+            Task.Run(() => Config.EditItems());
         }
 
         void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

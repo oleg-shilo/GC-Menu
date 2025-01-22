@@ -12,7 +12,11 @@ namespace GlobalContextMenu
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.FirstOrDefault() == "-menu")
+            if (args.FirstOrDefault() == "-html")
+            {
+                DispatcherForm.ConvertHrtmlToTextClipboard();
+            }
+            else if (args.FirstOrDefault() == "-menu")
             {
                 new DispatcherForm().ShowDialog();
             }

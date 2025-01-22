@@ -91,6 +91,22 @@ namespace GlobalContextMenu
             }
         }
 
+        public static void ConvertHrtmlToTextClipboard()
+        {
+            IDataObject data = Clipboard.GetDataObject();
+            var html = data.GetData(DataFormats.Html, autoConvert: true) as string;
+
+            // <html><body><!--StartFragment--> content <!--EndFragment--></body></html>
+            if (!string.IsNullOrEmpty(html))
+            {
+                var htmlText = html.ToString();
+                var start = htmlText.IndexOf("<!--StartFragment-->") + "<!--StartFragment-->".Length;
+                var end = htmlText.IndexOf("<!--EndFragment-->");
+                var fragment = htmlText.Substring(start, end - start);
+                Clipboard.SetText(fragment, TextDataFormat.UnicodeText);
+            }
+        }
+
         void PasteClipboardInput(string text)
         {
             Clipboard.Clear();
@@ -122,9 +138,16 @@ namespace GlobalContextMenu
 
         void SendKeybaordInput(string text)
         {
+            if (text.Length > 300)
+            {
+                MessageBox.Show("Text is too long to send via keyboard input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             SetForegroundWindow(parent);
             SendKeys.Flush();
             Thread.Sleep(10);
+
             text.ToList().ForEach(x =>
             {
                 try

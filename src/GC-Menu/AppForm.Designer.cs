@@ -34,6 +34,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
@@ -51,6 +52,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configToolStripMenuItem,
             this.hotKeyToolStripMenuItem,
+            this.convertToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -69,6 +71,13 @@
             this.hotKeyToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.hotKeyToolStripMenuItem.Text = "Settings";
             this.hotKeyToolStripMenuItem.Click += new System.EventHandler(this.hotKeyToolStripMenuItem_Click);
+            // 
+            // convertToolStripMenuItem
+            // 
+            this.convertToolStripMenuItem.Name = "hotKeyToolStripMenuItem";
+            this.convertToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.convertToolStripMenuItem.Text = "Convert from HTML";
+            this.convertToolStripMenuItem.Click += new System.EventHandler(this.convertToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -102,6 +111,7 @@
         System.Windows.Forms.ToolStripMenuItem configToolStripMenuItem;
         System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         System.Windows.Forms.ToolStripMenuItem hotKeyToolStripMenuItem;
+        System.Windows.Forms.ToolStripMenuItem convertToolStripMenuItem;
         System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

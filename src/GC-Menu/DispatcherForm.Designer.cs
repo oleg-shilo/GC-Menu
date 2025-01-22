@@ -44,29 +44,29 @@
             this.testBToolStripMenuItem,
             this.testCToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(103, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 70);
             // 
             // testAToolStripMenuItem
             // 
             this.testAToolStripMenuItem.Name = "testAToolStripMenuItem";
-            this.testAToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.testAToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.testAToolStripMenuItem.Text = "TestA";
             // 
             // testBToolStripMenuItem
             // 
             this.testBToolStripMenuItem.Name = "testBToolStripMenuItem";
-            this.testBToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.testBToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.testBToolStripMenuItem.Text = "TestB";
             // 
             // testCToolStripMenuItem
             // 
             this.testCToolStripMenuItem.Name = "testCToolStripMenuItem";
-            this.testCToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.testCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.testCToolStripMenuItem.Text = "TestC";
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "Exit";
             this.notifyIcon1.Visible = true;
             // 
             // DispatcherForm
