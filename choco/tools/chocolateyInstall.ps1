@@ -1,11 +1,11 @@
 $packageName = 'GC-Menu'
-$url = 'https://github.com/oleg-shilo/GC-Menu/releases/download/v1.1.0.0/gc-menu.7z'
+$url = 'https://github.com/oleg-shilo/GC-Menu/releases/download/v1.2.0/gc-menu.7z'
 
 Stop-Process -Name "gc-menu"
 
 $installDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$checksum = '6AF5F20F61970F5D5A5C19868A0CF17BBC01781735527940FC40C89FE1460227'
+$checksum = 'EDC81AAC2503E6DAFBF74B11DB2DC782C755E0656156FDD3B96DE23452D01958'
 $checksumType = "sha256"
 
 # Download and unpack a zip file

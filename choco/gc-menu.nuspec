@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>GC-Menu</id>
-        <version>1.1.0.0</version>
+        <version>1.2.0.0</version>
         <title>GC-Menu</title>
         <authors>Oleg Shilo</authors>
         <owners>Oleg Shilo</owners>
@@ -17,10 +17,8 @@
 </description>
         <summary>GC-Menu</summary>
         <releaseNotes>
-# Release v1.1.0.0
-- Added support for clipboard-paste insertion
-- Added support for clipboard HTML content
-- Added restoring config file header if it's absent.
+# Release v1.2.0
+- Added conversion of clipboard content to an HTML clipboard definition
 
         </releaseNotes>
         <copyright>Oleg Shilo</copyright>
