@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
@@ -46,7 +47,9 @@ namespace GlobalContextMenu
 
         void convertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Task.Run(DispatcherForm.ConvertHrtmlToTextClipboard);
+            var thread = new Thread(DispatcherForm.ConvertHrtmlToTextClipboard);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
 
         void configToolStripMenuItem_Click(object sender, EventArgs e)

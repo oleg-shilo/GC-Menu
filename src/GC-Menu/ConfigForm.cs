@@ -95,5 +95,10 @@ namespace GlobalContextMenu
         {
             Process.Start("explorer", Path.GetDirectoryName(Config.shortcutFile));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var t = Clipboard.GetDataObject(); // this is needed to prevent clipboard from being locked
+        }
     }
 }

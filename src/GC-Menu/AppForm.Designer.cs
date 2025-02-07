@@ -37,6 +37,7 @@
             this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,38 +57,39 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 120);
             // 
             // configToolStripMenuItem
             // 
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.configToolStripMenuItem.Text = "Organize";
             this.configToolStripMenuItem.Click += new System.EventHandler(this.configToolStripMenuItem_Click);
             // 
             // hotKeyToolStripMenuItem
             // 
             this.hotKeyToolStripMenuItem.Name = "hotKeyToolStripMenuItem";
-            this.hotKeyToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.hotKeyToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.hotKeyToolStripMenuItem.Text = "Settings";
             this.hotKeyToolStripMenuItem.Click += new System.EventHandler(this.hotKeyToolStripMenuItem_Click);
             // 
             // convertToolStripMenuItem
             // 
-            this.convertToolStripMenuItem.Name = "hotKeyToolStripMenuItem";
-            this.convertToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.convertToolStripMenuItem.Text = "Convert from HTML";
+            this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
+            this.convertToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.convertToolStripMenuItem.Text = "Generate from Clipboard";
+            this.convertToolStripMenuItem.ToolTipText = "Generate HTML item from the clipboard content.";
             this.convertToolStripMenuItem.Click += new System.EventHandler(this.convertToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -113,5 +115,6 @@
         System.Windows.Forms.ToolStripMenuItem hotKeyToolStripMenuItem;
         System.Windows.Forms.ToolStripMenuItem convertToolStripMenuItem;
         System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

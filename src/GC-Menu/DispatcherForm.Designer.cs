@@ -63,6 +63,7 @@
             this.testCToolStripMenuItem.Name = "testCToolStripMenuItem";
             this.testCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.testCToolStripMenuItem.Text = "TestC";
+            this.testCToolStripMenuItem.ToolTipText = "ttt";
             // 
             // notifyIcon1
             // 

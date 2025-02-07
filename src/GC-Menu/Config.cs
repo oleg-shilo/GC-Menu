@@ -110,6 +110,7 @@ namespace GlobalContextMenu
 ;  use '\n' to indicate line breaks
 ;  use '{clp}' to indicate that the insertion text needs to be pasted from the clipboard instead of simulating typing
 ;  use '{clp:html}' to paste as an html clipboard format 
+;  use '{ENTER}' to trigger enter keystroke
 ;  use '---' to indicate a menu item separator
 ;  use '  ' (double-space) to indicate a nested menu item
 ;  Example: Hello...|Hello World!

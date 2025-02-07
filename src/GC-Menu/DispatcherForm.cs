@@ -81,6 +81,7 @@ namespace GlobalContextMenu
 
         void SendInput(string text)
         {
+            //Debug.Assert(false);
             if (text.StartsWith("{clp"))
             {
                 PasteClipboardInput(text);
@@ -103,7 +104,8 @@ namespace GlobalContextMenu
                 var start = htmlText.IndexOf("<!--StartFragment-->") + "<!--StartFragment-->".Length;
                 var end = htmlText.IndexOf("<!--EndFragment-->");
                 var fragment = htmlText.Substring(start, end - start);
-                Clipboard.SetText(fragment, TextDataFormat.UnicodeText);
+                fragment = fragment.Replace("\r", "").Replace("\n", "");
+                Clipboard.SetText("Item {" + DateTime.Now + "}|{clp:html}" + fragment, TextDataFormat.UnicodeText);
             }
         }
 
@@ -140,7 +142,7 @@ namespace GlobalContextMenu
         {
             if (text.Length > 300)
             {
-                MessageBox.Show("Text is too long to send via keyboard input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Text is too long to send via keyboard input", "GC-Menu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -148,15 +150,29 @@ namespace GlobalContextMenu
             SendKeys.Flush();
             Thread.Sleep(10);
 
+            text = text.Replace("{ENTER}", "\r");
+
             text.ToList().ForEach(x =>
             {
                 try
                 {
                     Thread.Sleep(10);
-                    if ("+^%~{}()".Contains(x))
+                    //Debug.Assert(false);
+                    if (x == '\r')
+                    {
+                        SendKeys.SendWait("{ENTER}");
+                        Debug.WriteLine("<press_enter>");
+                    }
+                    else if ("+^%~{}()".Contains(x))
+                    {
                         SendKeys.SendWait("{" + x + "}");
+                        Debug.WriteLine("{" + x + "}");
+                    }
                     else
+                    {
                         SendKeys.SendWait(x.ToString());
+                        Debug.WriteLine(x.ToString());
+                    }
                     SendKeys.Flush();
                 }
                 catch { }
